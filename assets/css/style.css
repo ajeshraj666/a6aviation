@@ -1033,6 +1033,9 @@ footer .copy-right-footer .d-flex {
 footer .copy-right-footer p, footer .copy-right-footer a {
   color: #fff;
 }
+footer .copy-right-footer a:hover{
+color: #d9b620;
+}
 
 @media (min-width: 992px) {
   ul li {
