@@ -244,6 +244,7 @@ background: #fff
     display: flex;
     text-decoration: none;
     height: 25px;
+    padding: 13px;
     object-fit: contain;
     justify-content: center;
     align-items: center;
@@ -256,9 +257,39 @@ background: #fff
 }
 .mob-berger-menu {
     cursor: pointer;
-    display: flex;
     align-items: center;
     height: 71px;
+}
+.mob-berger-menu {
+  cursor: pointer;
+  margin-top: 11px;
+}
+.mob-berger-menu span {
+  width: 25px;
+  background: #cba918;
+  height: 2px;
+  display: block;
+  margin-bottom: 5px;
+}
+.mob-berger-menu:hover span{
+  background: #292e81;
+  transition: 0.2s ease all;
+
+}
+
+.mob-berger-menu span:nth-child(2){
+  width: 16px;
+  margin-left: auto;
+
+}
+.show--berger-menu .mob-berger-menu  span:nth-child(2){
+  width: 25px;
+  transition: 0.2s ease all;
+
+}
+.show--berger-menu .mob-berger-menu  span{
+  background: #292e81;
+  transition: 0.2s ease all;
 }
 .hamburger-menu .social{
     position: absolute;
@@ -284,7 +315,7 @@ background: #fff
     background: rgba(0, 0, 0, 0.3);
     z-index: 1001;
   }
-.menu__item {
+  ul.menu__box li a {
   display: block;
   padding: 12px 24px;
   color: #333;
@@ -294,23 +325,25 @@ background: #fff
   text-decoration: none;
   transition-duration: 0.25s;
 }
-.menu__item:hover {
+ul.menu__box li a:hover {
   color: #292e81;
 }
 
-.banner {
-  background-image: url(../images/banner.jpg);
-  background-size: cover;
-  background-position: center;
+.banner figure {
   position: relative;
 }
-
+.banner figure img{
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
 .banner-txt {
   height: 800px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   place-content: flex-end;
+  z-index: 2;
   padding-bottom: 140px;
 }
 .banner-txt span {
@@ -413,11 +446,20 @@ ul.slick-dots li button {
   transform: rotate(270deg);
 }
 
-.join-us {
-  background-image: url(../images/join-us.jpg);
-  background-size: cover;
-  background-position: bottom;
-  padding-bottom: 470px;
+.join-us figure {
+  position: relative;
+  bottom: -10px;
+}
+.join-us figure img {
+  width: 100%;
+}
+section#join {
+  position: relative;
+}
+.join-us .join-txt-wrapp {
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 .join-us span.join {
   width: 5px;
@@ -657,7 +699,8 @@ a.service-btn {
   font-size: 15.92px;
   line-height: 23.88px;
   height: 25px;
-  width: 170px;
+  min-width: 170px;
+width: 170px;
   color: #d9b620;
   position: relative;
   border-bottom: 1px solid #d9b620;
@@ -729,8 +772,10 @@ a.service-btn::after {
   text-align: center;
   position: relative;
 }
+.servicer-box-inner img {
+  position: absolute;
+}
 .best-services .service-box .servicer-box-inner {
-  background-image: url(../images/business-charter.png);
   background-size: 85% 85%;
   background-position: center;
   background-repeat: no-repeat;
@@ -745,12 +790,14 @@ a.service-btn::after {
   display: flex;
   align-items: flex-end;
 }
-.best-services .service-box .servicer-box-inner.service2 {
-  background-image: url(../images/bes-food.png);
+.servicer-box-inner img {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  transform: translateX(26px);
+  width: 85%;
 }
-.best-services .service-box .servicer-box-inner.service3 {
-  background-image: url(../images/best-cabin-crew.png);
-}
+
 .best-services .service-box .servicer-box-inner:hover .overlay {
   opacity: 1;
   transition: 0.5s ease;
@@ -830,15 +877,20 @@ a.service-btn::after {
   right: 0;
   background-color: #c3bda1;
 }
-
-.experience {
-  background-image: url(../images/Explore-the-world.jpg);
-  background-size: cover;
-  padding: 205px 0px 139px 0px;
+.experience figure img{
+  width: 100%;
+  height: 627px;
+  object-fit: cover;
+}
+.experience-txt-wrapper {
+  position: absolute;
+  top: 25%;
+  width: 100%;
 }
 .experience .service-btn {
   margin-top: 33px;
   display: block;
+  min-width:111px;
   width: 111px;
   border: unset;
 }
@@ -1093,14 +1145,13 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   .join-us .join-txt-wrapper {
     flex-basis: 45%;
   }
-  .join-us {
-    padding-bottom: 350px;
-  }
+
 }
 @media (max-width: 1366px) {
-  .join-us {
-    padding-bottom: 310px;
+  .banner-txt{
+    height: 757px;
   }
+
   header .share-btn {
     padding-left: 22px;
   }
@@ -1122,6 +1173,27 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
 }
 @media (max-width: 1200px) {
+  .experience figure img {
+    height: 427px;
+}
+.experience-txt-wrapper {
+  top: 22%;
+}
+.experience {
+  padding-bottom: 0;
+}
+  .servicer-box-inner img {
+    top: 50px;
+    transform: translateX(18px);
+    width: 87%;
+}
+  .join-us figure {
+    height: 670px;
+}
+  .mob-berger-menu {
+    display: none;
+}
+
   .custom-txt h2::after {
     width: 50%;
   }
@@ -1152,9 +1224,9 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
   .best-services .service-box .service-txt {
     -webkit-clip-path: circle(119px at 50% 5.5%);
-            clip-path: circle(119px at 50% 5.5%);
+    clip-path: circle(122px at 50% 2.5%);
     height: 152px;
-  }
+}
   .best-services .service-box .service-txt h3 {
     padding-top: 35px;
     font-size: 20px;
@@ -1169,12 +1241,12 @@ footer .copy-right-footer p, footer .copy-right-footer a {
     padding: 10px;
   }
   .best-services .overlay {
-    width: 237px;
-    height: 441px;
+    width: 240px;
+    height: 429px;
     right: 0;
     transform: translateX(-9%);
     border-radius: 195px;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
   .managed-fleet {
     padding: 50px 0px;
@@ -1235,6 +1307,13 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
 }
 @media (max-width: 991px) {
+  .join-us figure img {
+    transform: translateY(19%);
+    opacity: 0.5;
+}
+  .join-us {
+    padding-bottom: 20px;
+}
   .custom-txt h2::after {
     width: 40%;
   }
@@ -1266,8 +1345,8 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
   .best-services .overlay {
     width: 177px;
-    height: 332px;
-    margin-bottom: 30px;
+    height: 306px;
+    margin-bottom: 42px;
   }
   .best-services .service-box .servicer-box-inner {
     width: 233px;
@@ -1276,9 +1355,14 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
   .best-services .service-box .service-txt {
     -webkit-clip-path: circle(119px at 50% 5.5%);
-    clip-path: circle(90px at 50% 13.5%);
+    clip-path: circle(88px at 50% 5.5%);
     height: 126px;
-  }
+}
+.servicer-box-inner img {
+  top: 40px;
+  transform: translateX(18px);
+  width: 83%;
+}
   .best-services .service-box .service-txt h3 {
     padding-top: 30px;
     font-size: 15px;
@@ -1445,6 +1529,15 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   }
 }
 @media (max-width: 767px) {
+  .servicer-box-inner img {
+    top: 47px;
+    transform: translateX(18px);
+    width: 87%;
+}
+  .banner figure img {
+    height: 400px;
+    object-fit: cover;
+}
   .custom-txt h2 {
     font-size: 15px;
   }
@@ -1480,19 +1573,17 @@ footer .copy-right-footer p, footer .copy-right-footer a {
     margin: 20px 0px;
   }
   .best-services .overlay {
-    width: 237px;
-    height: 441px;
-    margin-bottom: 38px;
-  }
+    width: 242px;
+    height: 425px;
+    margin-bottom: 48px;
+    transform: translateX(-20px);
+
+}
   .best-services .service-box {
     flex-basis: 100%;
     max-width: 100%;
   }
-  .best-services .service-box .service-txt {
-    -webkit-clip-path: circle(119px at 50% 5.5%);
-    clip-path: circle(119px at 50% 5.5%);
-    height: 152px;
-  }
+
   .best-services .service-box .servicer-box-inner {
     width: 303px;
     height: 542px;
@@ -1512,11 +1603,7 @@ footer .copy-right-footer p, footer .copy-right-footer a {
   h2 {
     font-size: 35px;
   }
-  .join-us {
-    background-color: rgba(255, 255, 255, 0.7215686275);
-    background-blend-mode: overlay;
-    padding-bottom: 40px;
-  }
+
   .join-us .join-sm-txt-wrapper {
     padding-top: 65px;
   }
@@ -1564,8 +1651,45 @@ footer .copy-right-footer p, footer .copy-right-footer a {
     font-size: 30px;
     line-height: 40px;
   }
+  .best-services .service-box .service-txt {
+    -webkit-clip-path: circle(123px at 50% -1.5%);
+    clip-path: circle(123px at 50% -1.5%);
+    height: 152px;
+}
+
 }
 @media (max-width: 481px) {
+  .experience figure img {
+    height: 455px;
+}
+  .experience-txt-wrapper {
+    top: 13%;
+}
+  .best-services .overlay {
+    width: 247px;
+    height: 432px;
+    margin-bottom: 42px;
+    transform: translateX(-16px);
+}
+  .best-services .service-box .service-txt {
+    -webkit-clip-path: circle(123px at 50% 1.5%);
+    clip-path: circle(123px at 50% 1.5%);
+    height: 152px;
+  }
+  .servicer-box-inner img {
+    top: 45px;
+    transform: translateX(18px);
+    width: 88%;
+}
+
+  .join-us figure {
+    height: 950px;
+}
+.join-us figure img {
+  width: 100%;
+  height: 830px;
+  object-fit: cover;
+}
   .toScrolltext {
     bottom: 63%;
     left: 71.5%;
