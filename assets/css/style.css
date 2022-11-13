@@ -162,7 +162,7 @@ header .share-btn {
 header .share-btn img:hover {
   filter: invert(1);
 }
-header .share-btn :hover {
+header .share-btn:hover {
   color: #d9b620;
   transition: 0.2s ease all;
 }
